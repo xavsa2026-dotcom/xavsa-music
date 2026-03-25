@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Xavsa Music | Producción Musical</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+font-family:'Inter',sans-serif;
+background:#0b0b0b;
+color:white;
+line-height:1.6;
+overflow-x:hidden;
+}
+
+header{
+background:#000;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:10;
+}
+
+.brand{display:flex;align-items:center;gap:12px}
+
+.logo{height:50px}
+
+header h1{
+font-family:'Space Grotesk',sans-serif;
+letter-spacing:3px;
+font-size:24px;
+color:#0f4c5c;
+}
+
+nav a{
+color:white;
+margin-left:22px;
+text-decoration:none;
+font-weight:400;
+transition:.3s;
+}
+
+nav a:hover{color:#0f4c5c}
+
+.hero{
+height:85vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background-size:cover;
+background-position:center;
+animation:slider 20s infinite;
+}
+
+@keyframes slider{
+0%{background-image:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.9)),url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4');}
+33%{background-image:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.9)),url('https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2');}
+66%{background-image:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.9)),url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f');}
+100%{background-image:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.9)),url('https://images.unsplash.com/photo-1511379938547-c1f69419868d');}
+}
+
+.hero h2{
+font-family:'Space Grotesk',sans-serif;
+font-size:60px;
+margin-bottom:20px;
+}
+
+.hero p{max-width:600px;margin-bottom:30px}
+
+.btn{
+background:#0f4c5c;
+padding:12px 28px;
+border-radius:30px;
+text-decoration:none;
+color:white;
+font-weight:600;
+transition:.3s;
+}
+
+.btn:hover{background:#146b7e}
+
+section{padding:80px 8%;background-size:cover;background-position:center;position:relative}
+
+#servicios{background-image:linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.9)),url('https://images.unsplash.com/photo-1511735111819-9a3f7709049c');}
+#beats{background-image:linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.9)),url('https://images.unsplash.com/photo-1511379938547-c1f69419868d');}
+#tienda{background-image:linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.9)),url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4');}
+#videos{background-image:linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.9)),url('https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2');}
+#artistas{background-image:linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.9)),url('https://images.unsplash.com/photo-1497032205916-ac775f0649ae');}
+#portafolio{background-image:linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.9)),url('https://images.unsplash.com/photo-1518972559570-7cc1309f3229');}
+#reserva{background-image:linear-gradient(rgba(0,0,0,.88),rgba(0,0,0,.92)),url('https://images.unsplash.com/photo-1513883049090-d0b7439799bf');}
+#contacto{background-image:linear-gradient(rgba(0,0,0,.9),rgba(0,0,0,.95)),url('https://images.unsplash.com/photo-1524678606370-a47ad25cb82a');}
+
+.section-title{
+font-family:'Space Grotesk',sans-serif;
+font-size:36px;
+text-align:center;
+margin-bottom:50px;
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:25px;
+}
+
+.card{
+background:#151515;
+padding:28px;
+border-radius:12px;
+text-align:center;
+transition:.3s;
+}
+
+.card:hover{transform:translateY(-6px)}
+
+.card h3{margin-bottom:10px;color:#0f4c5c}
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
+
+.about img{width:100%;border-radius:10px}
+
+.artist-img{width:100%;border-radius:10px;margin-bottom:10px}
+
+.contact{text-align:center}
+
+footer{
+background:#000;
+padding:25px;
+text-align:center;
+font-size:14px;
+margin-top:40px;
+}
+
+/* equalizer */
+.equalizer{display:flex;gap:5px;justify-content:center;margin-top:20px}
+.bar{width:6px;height:18px;background:#0f4c5c;animation:beat 1s infinite}
+.bar:nth-child(2){animation-delay:.2s}
+.bar:nth-child(3){animation-delay:.4s}
+.bar:nth-child(4){animation-delay:.6s}
+.bar:nth-child(5){animation-delay:.8s}
+
+@keyframes beat{
+0%,100%{height:10px}
+50%{height:34px}
+}
+
+/* audio visualizer */
+.visualizer{display:flex;justify-content:center;gap:4px;margin-top:10px}
+.visualizer span{width:4px;height:10px;background:#0f4c5c;animation:visual 1s infinite}
+
+@keyframes visual{
+0%,100%{height:6px}
+50%{height:26px}
+}
+
+/* particles */
+#particles{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1}
+
+@media(max-width:900px){
+.about{grid-template-columns:1fr}
+.hero h2{font-size:40px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="brand">
+<img src="logo.png" class="logo" alt="logo">
+<h1>XAVSA MUSIC</h1>
+</div>
+
+<nav>
+<a href="#">Inicio</a>
+<a href="#servicios">Servicios</a>
+<a href="#beats">Beats</a>
+<a href="#tienda">Tienda</a>
+<a href="#videos">Videos</a>
+<a href="#artistas">Artistas</a>
+<a href="#portafolio">Portafolio</a>
+<a href="#reserva">Reservar</a>
+<a href="#contacto">Contacto</a>
+</nav>
+</header>
+
+<canvas id="particles"></canvas>
+
+<section class="hero">
+<h2>Producción Musical Profesional</h2>
+<p>Estudio creativo especializado en producción, mezcla, beats y desarrollo de artistas.</p>
+<a class="btn" href="#reserva">Reservar sesión</a>
+
+<div class="equalizer">
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+</div>
+
+</section>
+
+<section id="servicios">
+<h2 class="section-title">Servicios</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>Producción Musical</h3>
+<p>Creación completa de canciones y proyectos musicales.</p>
+</div>
+
+<div class="card">
+<h3>Grabación Profesional</h3>
+<p>Voces e instrumentos con calidad de estudio.</p>
+</div>
+
+<div class="card">
+<h3>Mezcla & Mastering</h3>
+<p>Sonido listo para Spotify, Apple Music y YouTube.</p>
+</div>
+
+<div class="card">
+<h3>Creación de Beats</h3>
+<p>Instrumentales exclusivas para artistas.</p>
+</div>
+
+</div>
+</section>
+
+<section id="beats">
+<h2 class="section-title">Beats</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>Trap Beat</h3>
+<audio controls style="width:100%">
+<source src="beat1.mp3" type="audio/mpeg">
+</audio>
+<div class="visualizer">
+<span></span><span></span><span></span><span></span><span></span>
+</div>
+</div>
+
+<div class="card">
+<h3>Urbano Beat</h3>
+<audio controls style="width:100%">
+<source src="beat2.mp3" type="audio/mpeg">
+</audio>
+<div class="visualizer">
+<span></span><span></span><span></span><span></span><span></span>
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="tienda">
+<h2 class="section-title">Tienda de Beats</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>Licencia Básica</h3>
+<p>Uso digital</p>
+<p><strong>$29</strong></p>
+<a class="btn" href="#">Comprar</a>
+</div>
+
+<div class="card">
+<h3>Licencia Premium</h3>
+<p>Streaming + monetización</p>
+<p><strong>$59</strong></p>
+<a class="btn" href="#">Comprar</a>
+</div>
+
+<div class="card">
+<h3>Beat Exclusivo</h3>
+<p>Derechos completos</p>
+<p><strong>$199</strong></p>
+<a class="btn" href="#">Comprar</a>
+</div>
+
+</div>
+</section>
+
+<section id="videos">
+<h2 class="section-title">Videoclips</h2>
+<p style="text-align:center;margin-bottom:40px">Aquí puedes mostrar tus videoclips, sesiones de estudio o beats visuales.</p>
+
+<iframe width="100%" height="250"
+src="https://www.youtube.com/embed/BMgSbDVNW5Q"
+title="Video musical"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen>
+</iframe>
+
+
+<div class="services">
+
+<div class="card">
+<h3>Video Musical</h3>
+<iframe width="100%" height="220" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<div class="card">
+<h3>Sesión de Estudio</h3>
+<iframe width="100%" height="220" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<div class="card">
+<h3>Video desde tu PC</h3>
+<video width="100%" controls>
+<source src="video1.mp4" type="video/mp4">
+</video>
+</div>
+
+</div>
+</section>
+
+<section id="artistas">
+<h2 class="section-title">Artistas</h2>
+
+<div class="services">
+
+<div class="card">
+<img class="artist-img" src="https://images.unsplash.com/photo-1511367461989-f85a21fda167">
+<h3>Artista 1</h3>
+<p>Hip Hop / Trap</p>
+</div>
+
+<div class="card">
+<img class="artist-img" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e">
+<h3>Artista 2</h3>
+<p>Pop / Urbano</p>
+</div>
+
+<div class="card">
+<img class="artist-img" src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e">
+<h3>Artista 3</h3>
+<p>Productor</p>
+</div>
+
+</div>
+</section>
+
+<section id="portafolio">
+<h2 class="section-title">Producciones</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>Single 2026</h3>
+<p>Producción completa realizada en Xavsa Music.</p>
+</div>
+
+<div class="card">
+<h3>Álbum Urbano</h3>
+<p>Proyecto musical independiente.</p>
+</div>
+
+</div>
+</section>
+
+<section id="reserva" class="contact">
+<h2 class="section-title">Reservar Sesión</h2>
+<p>Agenda tu sesión de grabación o producción.</p>
+<p>Email: xavsa2026@gmail.com<br>Teléfono / WhatsApp: +593 968 286 182</p>
+<a class="btn" href="https://wa.me/593968286182">Reservar por WhatsApp</a>
+</section>
+
+<section id="contacto" class="contact">
+<h2 class="section-title">Contacto</h2>
+<p>Email: xavsa2026@gmail.com<br>Teléfono / WhatsApp: +593 968 286 182</p>
+<p>Instagram: @xavsamusic<br>Ubicación: Quito, Ecuador</p>
+</section>
+
+<footer>
+<p>© 2026 Xavsa Music</p>
+</footer>
+
+<script>
+const canvas=document.getElementById('particles');
+const ctx=canvas.getContext('2d');
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+
+for(let i=0;i<70;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*2+1,
+d:Math.random()*1
+});
+}
+
+function draw(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+ctx.fillStyle="#0f4c5c";
+
+particles.forEach(p=>{
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+ctx.fill();
+
+p.y+=p.d;
+if(p.y>canvas.height)p.y=0;
+});
+
+requestAnimationFrame(draw);
+}
+
+draw();
+</script>
+
+</body>
+</html>
